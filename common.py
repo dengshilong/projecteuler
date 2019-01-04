@@ -5,6 +5,7 @@ Created on 2016年1月3日
 @author: robinjia
 @email: dengshilong1988@gmail.com
 '''
+from functools import reduce
 from math import sqrt,floor
 
 def isPrime(n):
@@ -52,6 +53,7 @@ def isPalindrome(x):
         j -= 1
     return True
 
+
 def largest_prime_factor(n):
     p = 2
     while n > 1 and n >= p:
@@ -61,3 +63,10 @@ def largest_prime_factor(n):
             return p
         p += 1
     return n
+
+
+def product_number(s):
+    return reduce(lambda x, y: x * y, s)
+
+def product_n(n):
+    return product_number(range(1, n + 1))

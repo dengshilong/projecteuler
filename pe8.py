@@ -5,11 +5,7 @@ Created on 2016年1月3日
 @author: robinjia
 @email: dengshilong1988@gmail.com
 '''
-from functools import reduce
-
-
-def product(s):
-    return reduce(lambda x, y: x * y, s)
+from common import product_number
 
 if __name__ == "__main__":
     board = ''
@@ -20,7 +16,7 @@ if __name__ == "__main__":
     for i in range(0, 1000 - 13):
         s = board[i: i + 13]
         s = [int(i) for i in s]
-        p = product(s)
+        p = product_number(s)
         if p > result:
             result = p
     print(result)
