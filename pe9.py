@@ -8,8 +8,8 @@ Created on 2016年1月3日
 
 if __name__ == "__main__":
     n = 1000
-    for a in xrange(1, n):
-        for b in xrange(a + 1, n):
+    for a in range(1, n):
+        for b in range(a + 1, n):
             if a ** 2 + b ** 2 == (n - a - b) ** 2:
-                print a * b * (n - a - b)
+                print(a * b * (n - a - b))
                 exit()

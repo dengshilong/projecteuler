@@ -15,4 +15,4 @@ def fibonacci(max):
 
 if __name__ == "__main__":
     n = 4000000
-    print sum(i for i in fibonacci(n) if i % 2 == 0)
+    print(sum(i for i in fibonacci(n) if i % 2 == 0))
