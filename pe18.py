@@ -1,6 +1,6 @@
 
-def load_data():
-    with open('pe18.txt') as f:
+def load_data(filename):
+    with open(filename) as f:
         return [[int(i) for i in line.strip().split(' ')] for line in f]
 
 def max_path_sum(board):
@@ -12,6 +12,7 @@ def max_path_sum(board):
     return s[0]
 
 if __name__ == "__main__":
-    board = load_data()
+    board = load_data('pe18.txt')
     print(max_path_sum(board))
+    print(max_path_sum(load_data('pe67.txt')))
 
