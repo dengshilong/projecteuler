@@ -30,7 +30,7 @@ if __name__ == "__main__":
         s = n * (n + 1) / 2
         result = divisors(s)
         if result > 500:
-            print(n, s, result)
+            print(n, s, result, prime_factor(s))
             break
     # for n in range(1, 20):
     #     v = n * (n + 1) / 2
