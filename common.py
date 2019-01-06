@@ -68,5 +68,12 @@ def largest_prime_factor(n):
 def product_number(s):
     return reduce(lambda x, y: x * y, s)
 
+
 def product_n(n):
     return product_number(range(1, n + 1))
+
+
+def get_divisors(n):
+    if n == 1:
+        return [1]
+    return [i for i in range(1, int(n/2) + 1) if n % i == 0]

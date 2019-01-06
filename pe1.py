@@ -7,5 +7,5 @@ Created on 2016年1月3日
 
 
 if __name__ == "__main__":
-    n = 1000;
+    n = 1000
     print(sum(i for i in range(1, n) if i % 3 == 0 or i % 5 == 0))

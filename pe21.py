@@ -1,9 +1,4 @@
-
-
-def get_divisors(n):
-    if n == 1:
-        return [1]
-    return [i for i in range(1, int(n/2) + 1) if n % i == 0]
+from common import get_divisors
 
 if __name__ == "__main__":
     print(get_divisors(220), get_divisors(284))
