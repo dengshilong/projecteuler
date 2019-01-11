@@ -70,6 +70,8 @@ def product_number(s):
 
 
 def product_n(n):
+    if n == 0 or n == 1:
+        return 1
     return product_number(range(1, n + 1))
 
 
