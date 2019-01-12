@@ -41,7 +41,7 @@ def get_primes(n):
     return [i for i in range(n + 1) if primes[i]]
 
 
-def isPalindrome(x):
+def is_palindrome(x):
     """判断是否是回文数"""
     x = str(x)
     i = 0
