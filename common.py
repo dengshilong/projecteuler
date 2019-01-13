@@ -88,3 +88,15 @@ def is_pandigital(n, m):
         if str(i) not in str(n):
             return False
     return True
+
+
+def load_names(filename):
+    data = ''
+    with open(filename) as f:
+        data = f.read()
+        data = ''.join(c for c in data.strip() if c != '"')
+    return data.split(',')
+
+
+def name_score(name):
+    return sum(ord(c) - ord('A') + 1 for c in name)
