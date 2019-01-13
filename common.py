@@ -5,6 +5,7 @@ Created on 2016年1月3日
 @author: robinjia
 @email: dengshilong1988@gmail.com
 '''
+from collections import defaultdict
 from functools import reduce
 from math import sqrt,floor
 
@@ -100,3 +101,14 @@ def load_names(filename):
 
 def name_score(name):
     return sum(ord(c) - ord('A') + 1 for c in name)
+
+
+def prime_factor(n):
+    d = defaultdict(int)
+    p = 2
+    while n > 1 and n >= p:
+        while n % p == 0:
+            n /= p
+            d[p] += 1
+        p += 1
+    return d

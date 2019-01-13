@@ -1,16 +1,5 @@
-from collections import defaultdict
-from itertools import product
+from common import prime_factor
 
-
-def prime_factor(n):
-    d = defaultdict(int)
-    p = 2
-    while n > 1 and n >= p:
-        while n % p == 0:
-            n /= p
-            d[p] += 1
-        p += 1
-    return d
 
 def divisors(n):
     if n == 1:
