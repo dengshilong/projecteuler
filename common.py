@@ -8,7 +8,7 @@ Created on 2016年1月3日
 from functools import reduce
 from math import sqrt,floor
 
-def isPrime(n):
+def is_prime(n):
     """判断一个数是否是素数"""
     if n <= 1:
         return False
