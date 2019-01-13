@@ -79,3 +79,12 @@ def get_divisors(n):
     if n == 1:
         return [1]
     return [i for i in range(1, int(n/2) + 1) if n % i == 0]
+
+
+def is_pandigital(n, m):
+    if len(str(n)) != m:
+        return False
+    for i in range(1, m + 1):
+        if str(i) not in str(n):
+            return False
+    return True

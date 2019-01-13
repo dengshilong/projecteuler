@@ -1,14 +1,6 @@
 import math
 
-
-def is_pandigital(n, m):
-    if len(str(n)) != m:
-        return False
-    for i in range(1, m + 1):
-        if str(i) not in str(n):
-            return False
-    return True
-
+from common import is_pandigital
 
 if __name__ == "__main__":
     maximum = 10 ** 10
