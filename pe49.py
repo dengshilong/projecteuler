@@ -1,10 +1,5 @@
-from common import get_primes
+from common import get_primes, origin_sequence
 
-
-def origin_sequence(n):
-    s = [i for i in str(n)]
-    s.sort()
-    return ''.join(s)
 
 def find_solution(n, start=1):
     primes = get_primes(10 ** n)

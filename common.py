@@ -112,3 +112,9 @@ def prime_factor(n):
             d[p] += 1
         p += 1
     return d
+
+
+def origin_sequence(n):
+    s = [i for i in str(n)]
+    s.sort()
+    return ''.join(s)
