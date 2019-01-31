@@ -5,28 +5,46 @@ Created on 2016年1月3日
 @author: robinjia
 @email: dengshilong1988@gmail.com
 '''
+import random
 from collections import defaultdict
 from functools import reduce
-from math import sqrt,floor
 
-def is_prime(n):
-    """判断一个数是否是素数"""
+
+def power_mod(a, b, m):
+    r = 1
+    while b:
+        if b & 1:
+            r = r * a % m
+        a = a * a % m
+        b >>= 1
+    return r
+
+
+def witness(n, r, d, a):
+    x = power_mod(a, d, n)
+    if x == 1 or x == n - 1:
+        return False
+    while r > 0:
+        x = x ** 2 % n
+        if x == n - 1:
+            return False
+        r -= 1
+    return True
+
+
+def is_prime(n, k=5):
     if n <= 1:
         return False
-    if n < 4:
-        return True
-    if n % 2 == 0:
-        return False
-    if n % 3 == 0:
-        return False
-    r = int(floor(sqrt(n)))
-    p = 5
-    step = 2
-    while p <= r:
-        if n % p == 0:
+    r = 0
+    d = n - 1
+    while d & 1 == 0:
+        d = d >> 1
+        r += 1
+    while k > 0:
+        a = random.randint(2, n - 1)
+        if witness(n, r, d, a):
             return False
-        p = p + step
-        step = 6 - step
+        k -= 1
     return True
 
 
