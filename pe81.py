@@ -4,7 +4,7 @@ def load_data(filename):
     with open(filename) as f:
         return [[int(i) for i in line.strip().split(',')] for line in f]
 
-def max_path_sum(board):
+def min_path_sum(board):
     length = len(board)
     new_board = [[board[i][j] for j in range(0, length)] for i in range(0, length)]
     board = new_board
@@ -35,8 +35,8 @@ if __name__ == "__main__":
              [630, 803, 746, 422, 111],
              [537, 699, 497, 121, 956],
              [805, 732, 524, 37, 331]]
-    print(max_path_sum(board))
-    assert max_path_sum(board) == 2427
+    print(min_path_sum(board))
+    assert min_path_sum(board) == 2427
     board = load_data('pe81.txt')
-    print(max_path_sum(board))
+    print(min_path_sum(board))
 
