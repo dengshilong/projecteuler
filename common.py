@@ -136,3 +136,13 @@ def origin_sequence(n):
     s = [i for i in str(n)]
     s.sort()
     return ''.join(s)
+
+
+def totient(n):
+    if n == 1:
+        return 1
+    d = prime_factor(n)
+    r = 1
+    for p, k in d.items():
+        r *= (p - 1) * (p ** (k - 1))
+    return r
